@@ -17,7 +17,7 @@ export class NPCReplacement implements IPlugin {
         let playas = ((this as any)['metadata']['zzplayas'] as Record<string, string>);
         for (let key in playas){
             this.models.push(
-                new (require(`./templates/to_be_renamed/${key}`) as new (filename: string) => INPCTemplate)(playas[key])
+                new (require(`./templates/${key}`) as new (filename: string) => INPCTemplate)(playas[key])
             );
         }
     }
@@ -37,7 +37,7 @@ export class NPCReplacement implements IPlugin {
         for (let i = 0; i < this.models.length; i++) {
             if (this.models[i].game === this.game) {
                 let model = this.models[i];
-                let proxy = readFileSync(resolve(__dirname, "templates", "proxies", model.proxy_name));
+                let proxy = readFileSync(resolve(__dirname, "proxies", model.proxy_name));
                 let success = tools.recompressObjectFileIntoRom(evt.rom, model.object_index, proxy);
                 if (success) {
                     this.ModLoader.logger.info(`Successfully compressed ${model.proxy_name} into ROM`);
