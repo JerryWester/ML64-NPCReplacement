@@ -1,0 +1,19 @@
+{
+  "name": "NPC Replacement Template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "NPCReplacement.js",
+  "author": "JerryWester",
+  "credits": "",
+  "license": "GPL-3.0",
+  "core": [
+    "OcarinaofTime",
+    "MajorasMask"
+  ],
+  "zzplayas": {
+    "AdultMalon": "zzplayas_adult_malon.zobj"
+  },
+  "modloader64_deps": {
+    "Z64Lib": "https://github.com/hylian-modding/ML64-Z64Lib"
+  }
+}

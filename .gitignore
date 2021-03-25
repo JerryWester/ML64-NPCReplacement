@@ -1,0 +1,6 @@
+build/
+libs/
+node_modules/
+cores/
+external_cores/
+OotOnline.pak
